@@ -16,6 +16,7 @@ export const App = () => {
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
+  const [disabled, setDisabled] = useState(false);
 
   /* shuffle cards */
   const shuffleCards = () => {
@@ -36,6 +37,7 @@ export const App = () => {
   /* useEffect for comparing two selected cards */
   useEffect(() => {
     if (choiceOne && choiceTwo) {
+      setDisabled(true);
       matchCards(choiceOne, choiceTwo);
     }
   }, [choiceOne, choiceTwo]);
@@ -63,7 +65,13 @@ export const App = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
     setTurns((prevTurns) => prevTurns + 1);
+    setDisabled(false);
   };
+
+  /* start the game automatically */
+  useEffect(() => {
+    shuffleCards();
+  }, []);
 
   return (
     <div className="App">
@@ -76,9 +84,11 @@ export const App = () => {
             card={card}
             handleChoice={handleChoice}
             flipped={card === choiceOne || card === choiceTwo || card.matched}
+            disabled={disabled}
           />
         ))}
       </div>
+      <p>Number of turns: {turns}</p>
     </div>
   );
 };
