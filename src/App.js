@@ -24,6 +24,8 @@ export const App = () => {
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() }));
 
+    setChoiceOne(null);
+    setChoiceTwo(null);
     setCards(shuffledCards);
     setTurns(0);
   };
@@ -75,7 +77,7 @@ export const App = () => {
 
   return (
     <div className="App">
-      <h1>Magic match</h1>
+      <h1>Match the cards</h1>
       <button onClick={shuffleCards}>New Game</button>
       <div className="card-grid">
         {cards.map((card) => (
