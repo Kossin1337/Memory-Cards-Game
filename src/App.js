@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./App.scss";
 
 const cardImages = [
   { src: "/img/helmet-1.png" },
@@ -30,6 +30,16 @@ export const App = () => {
     <div className="App">
       <h1>Magic match</h1>
       <button onClick={shuffleCards}>New Game</button>
+      <div className="card-grid">
+        {cards.map((card) => (
+          <div key={card.id} className="card">
+            <div>
+              <img className="front" src={card.src} alt="card front" />
+              <img className="back" src="/img/cover.png" alt="card back" />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
