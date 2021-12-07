@@ -3,12 +3,12 @@ import "./App.scss";
 import { Card } from "./Card";
 
 const cardImages = [
-  { src: "/img/helmet-1.png", matched: false },
-  { src: "/img/potion-1.png", matched: false },
-  { src: "/img/ring-1.png", matched: false },
-  { src: "/img/scroll-1.png", matched: false },
-  { src: "/img/shield-1.png", matched: false },
-  { src: "/img/sword-1.png", matched: false },
+  { src: "/img/shroom-1.png", matched: false },
+  { src: "/img/weed-1.png", matched: false },
+  { src: "/img/ciggaretes-1.png", matched: false },
+  { src: "/img/zippo-1.png", matched: false },
+  { src: "/img/cygar-1.png", matched: false },
+  { src: "/img/white-1.png", matched: false },
 ];
 
 export const App = () => {
