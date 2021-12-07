@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 const cardImages = [
-  { src: 1 },
-  { src: 2 },
-  { src: 3 },
-  { src: 4 },
-  { src: 5 },
-  { src: 6 },
+  { src: "/img/helmet-1.png" },
+  { src: "/img/potion-1.png" },
+  { src: "/img/ring-1.png" },
+  { src: "/img/scroll-1.png" },
+  { src: "/img/shield-1.png" },
+  { src: "/img/sword-1.png" },
 ];
 
 export const App = () => {
