@@ -1,20 +1,35 @@
 .App {
   max-width: 860px;
   margin: 2rem auto;
-}
 
-button {
-  background: none;
-  border: 2px solid #fefefe;
-  padding: 6px 12px;
-  border-radius: 5px;
-  color: #fefefe;
-  font-weight: 500;
-  cursor: pointer;
-  font-size: 1em;
-}
+  button {
+    background: none;
+    border: 2px solid #fefefe;
+    padding: 6px 12px;
+    border-radius: 5px;
+    color: #fefefe;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1em;
+  }
 
-button:hover {
-  background: #c23866;
-  color: #fefefe;
+  button:hover {
+    background: #c23866;
+    color: #fefefe;
+  }
+
+  .card-grid {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+
+    .card {
+      border-radius: 25px;
+
+      img {
+        border-radius: 10px;
+      }
+    }
+  }
 }
