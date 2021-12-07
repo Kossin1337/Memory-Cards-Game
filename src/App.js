@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
+import { Card } from "./Card";
 
 const cardImages = [
   { src: "/img/helmet-1.png" },
@@ -32,12 +33,7 @@ export const App = () => {
       <button onClick={shuffleCards}>New Game</button>
       <div className="card-grid">
         {cards.map((card) => (
-          <div key={card.id} className="card">
-            <div>
-              <img className="front" src={card.src} alt="card front" />
-              <img className="back" src="/img/cover.png" alt="card back" />
-            </div>
-          </div>
+          <Card key={card.id} src={card.src} />
         ))}
       </div>
     </div>
