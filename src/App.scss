@@ -29,12 +29,23 @@
 
       .front {
         transform: rotateY(90deg);
+        transition: all ease-in 0.15s;
         position: absolute;
+      }
+
+      .back {
+        transition: all ease-in 0.15s;
+        transition-delay: 0.2s;
       }
 
       .flipped {
         .front {
           transform: rotateY(0deg);
+          transition-delay: 0.15s;
+        }
+        .back {
+          transform: rotateY(90deg);
+          transition-delay: 0s;
         }
       }
 
