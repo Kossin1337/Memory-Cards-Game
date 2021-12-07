@@ -3,12 +3,12 @@ import "./App.scss";
 import { Card } from "./Card";
 
 const cardImages = [
-  { src: "/img/helmet-1.png" },
-  { src: "/img/potion-1.png" },
-  { src: "/img/ring-1.png" },
-  { src: "/img/scroll-1.png" },
-  { src: "/img/shield-1.png" },
-  { src: "/img/sword-1.png" },
+  { src: "/img/helmet-1.png", matched: false },
+  { src: "/img/potion-1.png", matched: false },
+  { src: "/img/ring-1.png", matched: false },
+  { src: "/img/scroll-1.png", matched: false },
+  { src: "/img/shield-1.png", matched: false },
+  { src: "/img/sword-1.png", matched: false },
 ];
 
 export const App = () => {
@@ -43,13 +43,23 @@ export const App = () => {
   /* Match cards */
   const matchCards = (cardOne, cardTwo) => {
     if (cardOne.src === cardTwo.src) {
-      console.log("Cards match!");
+      setCards((prevCards) => {
+        return prevCards.map((card) => {
+          if (card.id === cardOne.id || card.id === cardTwo.id) {
+            return { ...card, matched: true };
+          } else {
+            return card;
+          }
+        });
+      });
       resetTurn();
     } else {
       console.log("Cards don't match");
       resetTurn();
     }
   };
+
+  console.log(cards);
 
   /* Reset choices & increase turn */
   const resetTurn = () => {
