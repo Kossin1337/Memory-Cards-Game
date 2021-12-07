@@ -54,12 +54,9 @@ export const App = () => {
       });
       resetTurn();
     } else {
-      console.log("Cards don't match");
-      resetTurn();
+      setTimeout(() => resetTurn(), 1000);
     }
   };
-
-  console.log(cards);
 
   /* Reset choices & increase turn */
   const resetTurn = () => {
@@ -74,7 +71,12 @@ export const App = () => {
       <button onClick={shuffleCards}>New Game</button>
       <div className="card-grid">
         {cards.map((card) => (
-          <Card key={card.id} card={card} handleChoice={handleChoice} />
+          <Card
+            key={card.id}
+            card={card}
+            handleChoice={handleChoice}
+            flipped={card === choiceOne || card === choiceTwo || card.matched}
+          />
         ))}
       </div>
     </div>
